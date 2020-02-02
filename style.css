@@ -8,7 +8,7 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: #000000!important;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -27,13 +27,16 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
+  border-radius: 0px;
+  padding-top: 20px;
+  font-weight: bold;
+  text-align: right;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 2px solid white;;
 }
 
 .hour {
@@ -63,9 +66,17 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  border: none;
+  border-left: 4px solid rgb(0, 117, 143);
 }
-
+.saveBtn  i{
+  font-size: 24px;
+}
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+#currentDay{
+ font-weight: 900;
+ font-size: 30px;
 }
