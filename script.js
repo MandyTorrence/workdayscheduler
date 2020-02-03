@@ -18,7 +18,7 @@ function addHourBlocks() {
         console.log(hours[i]);
         rowDiv = $('<div>').addClass('row').attr('id', 'block' + [i]).appendTo(hourBlocks);
         timeDiv = $('<div>').text(hours[i]).addClass('col-2 hour time-block');
-        textArea = $('<textarea>').attr("id", [i] + " text" + [i]).addClass('col-8 input');
+        textArea = $('<textarea>').attr("id", [i]).addClass('col-8 input');
         saveBtn = $('<button>').addClass('col-2 saveBtn saveIcon' + [i]);
         saveIcon = $('<i>').addClass('far fa-save');
         $('#block' + [i]).append(timeDiv, textArea, saveBtn);
@@ -61,15 +61,14 @@ function colorChange() {
 //Rendering the saved text
 function renderText() {
     console.log("Rendering function is running");
-    hourInfo = $(this).siblings(".hour").text();
     for (var j = 0; j < hours.length; j++) {
+        hourInfo = $(this).siblings(".hour").text();
         console.log("Hours: " + hours[j]);
-        var saveWords = (localStorage.getItem(hourInfo));
+        var saveWords = JSON.parse(localStorage.getItem(hours[j]));
         console.log(saveWords);
         console.log("#text" + [j]);
-        var defaultValue = ("")
-        $("#text" + [j]).val(defaultValue)
-        $("#text" + [j]).val(saveWords)
+        console.log("------------------")
+        $("#" + [j]).val(saveWords || "");
     }
 };
 
@@ -86,3 +85,4 @@ $(".saveBtn").click(function () {
     colorChange();
     renderText();
 });
+
